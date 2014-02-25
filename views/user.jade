@@ -1,0 +1,14 @@
+extends layout
+
+block content
+   h1= title
+   p Welcome to #{title}
+   
+   - for (var u in users) {
+      p= users[u].name
+   - }
+  
+   form(action='',method='post')
+      label Novo Usuário: 
+      input(type='text',name='name')
+      input(type='submit',value='Adcionar')
