@@ -8,7 +8,7 @@ var express = require('express')
   , response = http.ServerResponse.prototype
   , _render = response.render
   , path = require('path')
-  , verbose = false;
+  , verbose = true;
 
 var app = express();
 

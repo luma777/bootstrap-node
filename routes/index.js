@@ -3,5 +3,5 @@
  */
 
 exports.GET = function(req, res) {
-   res.render({title: 'Home'});
+   res.render({title: 'New Home'});
 };

@@ -47,7 +47,7 @@ module.exports = function(parent, dir, options){
 
    // default path view
    parent.use(function(req, res, next) {
-      var defaultView = req.url.replace(/^\//, '') || 'index',
+      var defaultView = req.url.replace(/^\//, '').replace(/\/$/, '') || 'index',
          render = res.render;
 
       res.render = function(view, options, fn) {
@@ -74,6 +74,7 @@ module.exports = function(parent, dir, options){
             options = view;
             view = defaultView;
          }
+console.log('********** ' + view);
          render.call(self, view, options, function(err, str) {
             fn(err, str);
          });
