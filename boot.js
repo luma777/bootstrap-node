@@ -25,10 +25,8 @@ function exportPath (parent, dir, options){
 
                   // import method with args
                   if (obj.CaptureArgs) {
-                     for(var args in obj.CaptureArgs) {
-                        options.verbose && console.log(key + ': ' + path + '/' + obj.CaptureArgs[args]);
-                        parent[method](path + '/' + obj.CaptureArgs[args], obj[key]);
-                     }
+                     options.verbose && console.log(key + ': ' + path + '/' + obj.CaptureArgs.join('/'));
+                     parent[method](path + '/' + obj.CaptureArgs.join('/'), obj[key]);
                   } else {
                      options.verbose && console.log(key + ': ' + path);
                      parent[method](path, obj[key]);
