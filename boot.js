@@ -74,7 +74,7 @@ module.exports = function(parent, dir, options){
             options = view;
             view = defaultView;
          }
-console.log('********** ' + view);
+
          render.call(self, view, options, function(err, str) {
             fn(err, str);
          });
